@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PandaGuesser</title>
+
+    <script type="module" src="app.js" defer></script>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  </head>
+
+  <body>
+    <div id="app" v-cloak>
+      <h1>PandaGuesser App v1</h1>
+      <!-- <label for="answer">
+        Quelle est la traduction en anglais du mot
+        <strong> {{ wordA }} </strong> ?
+      </label>
+
+      <input
+        type="text"
+        id="answer"
+        v-model="answer"
+        v-on:keyup.enter="checkAnswer()"
+        v-bind:style="{ 'background-color': inputBackgroundColor}"
+      />
+
+      <p v-if="hasError">Vous devez donner une réponse !</p>
+
+      <label for="showHint">Donner un indice ?</label>
+      <input type="checkbox" id="showHint" v-model="showHint" />
+
+      <div v-if="showHint">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </div>
+
+      <p v-if="answer != ''">Votre réponse : {{ answer }}</p>
+
+      <button v-on:click="checkAnswer()">Vérifier votre réponse</button>
+
+      <template v-if="showFeedBack">
+        <img
+          v-bind:src=" 'http://127.0.0.1:5503/circle-' + circleType + '.png' "
+          v-bind:alt="imageAlt"/>
+        <p v-if="correct">Bravo ! C'est la bonne réponse !</p>
+        <p v-else>Désolé ! Essaye encore !</p>
+        <button v-on:click="reset()">Reset</button>
+      </template>
+
+      First Name <input type="test" v-model="firstName">
+      Last Name <input type="test" v-model="lastName">
+
+      <p>Bonjour {{ fullName }}</p>
+      <p>Bonjour {{ getFullName() }}</p>
+      <p>Bonjour {{ watchFullName }}</p>
+
+      <h2>Short French word:</h2>
+      <ul>
+        <li v-for="thisWord in shortFrenchWords">{{thisWord}}</li>
+      </ul> -->
+
+      <!-- <h2>Group of checkboxes</h2>
+
+      <label for="greetings">Greetings</label>
+      <input
+        type="Checkbox"
+        id="greetings"
+        value="greetings"
+        v-model="categories"/>
+      <label for="colors">Colors</label>
+      <input
+        type="Checkbox"
+        id="colors"
+        value="colors"
+        v-model="categories"/>
+      <label for="verbs">Verbs</label>
+      <input
+        type="Checkbox"
+        id="verbs"
+        value="verbs"
+        v-model="categories"/>
+
+        <h2>Radios</h2>
+        <label for="easy">Easy</label>
+        <input
+        type="radio"
+        id="easy"
+        value="easy" name="level"
+        v-model="level"/>
+        <label for="moderate">Moderate</label>
+        <input
+        type="radio"
+        id="moderate"
+        value="moderate" name="level"
+        v-model="level"/>
+        <label for="difficulte">Difficulte</label>
+        <input
+        type="radio"
+        id="difficulte"
+        value="difficulte" name="level"
+        v-model="level"/>
+
+        <h2>Select</h2>
+
+        <select name="level-select" id="level-select" v-model="level">
+            <option value="easy">Easy</option>
+            <option value="moderate">Moderate</option>
+            <option value="difficulte">Difficulte</option>
+        </select>
+
+        <h2>TextArea</h2>
+        <textarea name="" id="" cols="30" rows="10" v-model=""textContent>
+            {{ textContent}}
+        </textarea> -->
+    </div>
+  </body>
+</html>

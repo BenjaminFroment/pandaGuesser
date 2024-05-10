@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PandaGuesser App v1.5</title>
+    <link rel="stylesheet" href="http://127.0.0.1:5503/assets/css/app.css" />
+    <script
+      type="module"
+      src="http://127.0.0.1:5503/assets/js/app.js"
+      defer
+    ></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div id="app" v-cloak>
+      <!-- Header Section -->
+      <div class="container">
+        <header class="title-container">
+          <h1 class="title-text">
+            <span style="--i: -5">P</span>
+            <span style="--i: -4">a</span>
+            <span style="--i: -3">n</span>
+            <span style="--i: -2">d</span>
+            <span style="--i: -1">a</span>
+            <br />
+            <span style="--i: -0">G</span>
+            <span style="--i: 1">u</span>
+            <span style="--i: 2">e</span>
+            <span style="--i: 3">s</span>
+            <span style="--i: 4">s</span>
+            <span style="--i: 5">e</span>
+            <span style="--i: 6">r</span>
+          </h1>
+        </header>
+        <!-- Main Section  -->
+        <main class="container">
+          <!-- Reset Box -->
+          <div class="reset-box">
+            <button
+              class="button-bg-move"
+              role="button"
+              v-on:click="restartGame()"
+            >
+              Rejouer ?
+            </button>
+          </div>
+
+          <!-- Alert Box -->
+          <div id="completed" class="completed" v-show="completed">
+            <div class="alert-box">
+              <input
+                type="checkbox"
+                id="success-msg"
+                class="hidden"
+                name="success-msg"
+              />
+              <label for="success-msg" class="success-msg">
+                <i></i><strong>👍 Félicitations !</strong> <br />
+                Vous avez tout complété !
+                <span class="close" v-on:click="closeNotification()">x</span>
+              </label>
+            </div>
+          </div>
+          <!-- Message Result Box -->
+          <div id="correct-count" class="correct-count">
+            <p>Vous avez répondu à {{correctCount}} sur {{wordCount}}</p>
+          </div>
+          <!-- Cards Section -->
+          <div class="cards">
+            <div
+              class="card-item"
+              v-for="word, index in shuffledWords"
+              v-bind:key="index"
+            >
+              <!-- Card Item -->
+              <div class="card-item-box">
+                <div class="card-item__bg"></div>
+
+                <div class="card-title">
+                  <p class="word">{{word.wordA}}</p>
+                </div>
+                <div id="card-answer">
+                  <input type="text" v-bind:name="'answer-' +index"
+                  v-bind:id="'answer-' + index" v-model="word.answer"
+                  v-on:keyup.enter="validateAnswer(word)" v-if="!word.correct">
+                  <p v-else class="correct-answer word">{{word.answer}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
